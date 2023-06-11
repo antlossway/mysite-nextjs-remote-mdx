@@ -6,7 +6,7 @@ import Button from "@/components/Button"
 import { MDXRemote } from "next-mdx-remote";
 import "highlight.js/styles/github-dark.css"
 
-export const revalidate = process.env.REVALIDATE_INTERVAL // 0: equivalent to "cache: no-cache", for development, and need to comment out generateStaticParams
+export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL) // 0: equivalent to "cache: no-cache", for development, and need to comment out generateStaticParams
 
 export async function generateStaticParams() {
     const posts = await getPostsMeta() // deduped! (de-duplication)

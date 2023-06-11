@@ -3,7 +3,7 @@ import { getPostsMeta } from '@/lib/posts'
 import PostListItem from '@/components/PostListItem'
 import Button from '@/components/Button'
 
-export const revalidate = 86400
+export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL)
 
 export default async function Blog() {
 

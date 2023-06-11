@@ -19,5 +19,8 @@ export async function GET(req) {
 
     revalidatePath(path)
 
-    return NextResponse.json({revalidated: true})
+    return NextResponse.json({
+        revalidated: true,
+        path,
+    })
 }

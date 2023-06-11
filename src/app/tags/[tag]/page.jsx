@@ -4,7 +4,7 @@ import PostListItem from '@/components/PostListItem'
 import Link from 'next/link'
 import Button from '@/components/Button'
 
-export const revalidate = process.env.REVALIDATE_INTERVAL
+export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL)
 
 export async function generateStaticParams() {
     const posts = await getPostsMeta() //deduped

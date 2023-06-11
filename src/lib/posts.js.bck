@@ -1,0 +1,60 @@
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import {remark} from "remark"
+import html from "remark-html"
+
+const postsDir = path.join(process.cwd(), 'src/app/blog')
+
+export function getPostsData() {
+    // get .mdx files
+    const fileNames = fs.readdirSync(postsDir).filter((fileName) => /\.mdx$/.test(fileName))
+
+    const data = fileNames.map((fileName) => {
+        //read markdown file as string
+        const fullPath = path.join(postsDir, fileName)
+        const content = fs.readFileSync(fullPath, 'utf-8')
+
+        // remove ".mdx" suffix
+        const slug = fileName.replace(/\.mdx$/, '')
+
+        //use gray-matter to parse the bllog metadata section
+        const matterResult = matter(content)
+        const blogPost = {
+            slug,
+            title: matterResult.data.title,
+            date: matterResult.data.date,
+            description: matterResult.data.description,
+        }
+
+        return blogPost
+    })
+
+    // sort posts by date
+    return data.sort( (a,b) => a.date < b.date ? 1 : -1)
+}
+
+export async function getPostData(slug) {
+    const fullPath = path.join(postsDir, `${slug}.mdx`)
+    const content = fs.readFileSync(fullPath, 'utf-8')
+
+    //use gray-matter to parse the post metadata section
+    const matterResult = matter(content)
+
+    const processedContent = await remark()
+        .use(html)
+        .process(matterResult.content)
+
+    const contentHtml = processedContent.toString()
+
+    const blogPostWithHTML = {
+        slug,
+        title: matterResult.data.title,
+        date: matterResult.data.date,
+        description: matterResult.data.description,
+        contentHtml
+    }
+
+    return blogPostWithHTML
+
+}

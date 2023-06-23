@@ -6,7 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  color-scheme: light dark;
 }
+
+/* test */
+@layer components {
+  .wrapper {
+    @apply max-w-md mx-auto
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -18,10 +27,23 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+
+.autolink-svg {
+  display: inline-block;
+  margin-left: .5em;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+input:invalid[focused="true"]~span {
+  display: block;
+  color: red;
 }

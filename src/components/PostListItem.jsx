@@ -7,7 +7,7 @@ export default function PostListItem({post}) {
   const pubDate = formatDate(date)
 
   return (
-    <li className='mt-4 text-2xl dark:text-white/90'>
+    <li className='mt-4 text-xl dark:text-white/90 flex justify-between  '>
       <Link className='underline hover:text-black/70 dark:hover:text-white'
         href={`/blog/${slug}`} >
           {title}

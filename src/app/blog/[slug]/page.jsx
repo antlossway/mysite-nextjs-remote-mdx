@@ -2,8 +2,6 @@ import { getPostsMeta, getPostByName } from "@/lib/posts";
 import {notFound} from "next/navigation"
 import formatDate from "@/lib/formatDate";
 import Link from "next/link";
-import Button from "@/components/Button"
-import { MDXRemote } from "next-mdx-remote";
 import "highlight.js/styles/github-dark.css"
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL) // 0: equivalent to "cache: no-cache", for development, and need to comment out generateStaticParams
@@ -52,9 +50,8 @@ export default async function Post ({params}) {
 
     return (
         <>
-        <main className="px-6 mx-auto prose prose-xl prose-slate dark:prose-invert">
-            <h1 className="text-3xl mt-4 mb-0">{meta.title}</h1>
-            <p className="mt-0 text-sm">{pubDate}</p>
+        <main className="px-6 py-6 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline ">
+            <p className="mt-6 text-sm">{pubDate}</p>
             <article>
                 {content}
             </article>
@@ -62,9 +59,7 @@ export default async function Post ({params}) {
                 <h2>Related:</h2>
                 <div className="flex flex-row gap-4">{tags}</div>
             </section>
-            <p className="mb-10">
-                <Link href="/blog"> Back To List</Link>
-            </p>
+
         </main>
 
         </>

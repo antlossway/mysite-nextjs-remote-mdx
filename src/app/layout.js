@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Quinn's place",
-  description: 'Create with next.js, tailwindCSS',
+  description: 'The place to show what I have learned. Create with next.js, tailwindCSS',
 }
 
 export default function RootLayout({ children }) {

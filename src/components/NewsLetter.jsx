@@ -9,8 +9,9 @@ export default function NewsLetter() {
     const handleNewsletter = async(e) => {
         e.preventDefault()
         const email = e.target[0].value
-        console.log(email)
+        // console.log(email)
 
+        // register the new subscriber's email into mailing list
         const res = await fetch("/api/newsletter", {
           method: "POST",
           headers: {
@@ -20,8 +21,9 @@ export default function NewsLetter() {
             email
           })
         })
-        console.log(res)
+        // console.log(res)
         res.status === 201 && setNewSub(true)
+
     }
 
   return (

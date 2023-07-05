@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import Introduction from '@/components/Introduction'
 import ContactForm from '@/components/ContactForm'
@@ -38,7 +39,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className='mt-6 mb-20 '>
+        <div className='mt-6 mb-24 '>
           <ContactForm />
         </div>
       </main>

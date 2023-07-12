@@ -5,7 +5,9 @@ export default function layout({children}) {
   return (
     <div className='mb-56'>
         {children}
-        <NewsLetter />
+        <div className='wrapper-post'>
+          <NewsLetter />
+        </div>
     </div>
   )
 }

@@ -2,12 +2,13 @@ import React from 'react'
 import formatDate from '@/lib/formatDate'
 import Link from 'next/link'
 
-export default function PostListItem({post}) {
-  const {slug, title, date} = post
+export default function PostListItem({meta}) {
+  const {slug, title, date} = meta
   const pubDate = formatDate(date)
+  // console.log("debug meta: ", meta)
 
   return (
-    <li className='mt-4 text-xl dark:text-white/90 flex justify-between  '>
+    <li className='mt-4 text-xl dark:text-white/90 flex flex-col items-start sm:flex-row sm:justify-between  '>
       <Link className='underline hover:text-black/70 dark:hover:text-white'
         href={`/blog/${slug}`} >
           {title}

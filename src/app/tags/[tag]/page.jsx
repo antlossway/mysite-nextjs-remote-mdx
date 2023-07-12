@@ -1,8 +1,7 @@
 import React from 'react'
 import { getPostsMeta } from '@/lib/posts'
 import PostListItem from '@/components/PostListItem'
-import Link from 'next/link'
-import Button from '@/components/Button'
+import BackToList from '@/components/BackToList'
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL)
 
@@ -27,13 +26,13 @@ export async function generateMetadata ({params}) {
 export default async function TagPostList({params}) {
     const {tag} = params
 
-  const posts = await getPostsMeta()
+  const postsMeta = await getPostsMeta()
 
-  if (!posts) {
+  if (!postsMeta) {
     return <p className='mt-10 text-center'>Sorry, no posts available</p>
   }
 
-  const tagPosts = posts.filter(post => post.tags.includes(tag))
+  const tagPosts = postsMeta.filter(meta => meta.tags.includes(tag))
 
   if (!tagPosts.length) {
     return (
@@ -41,18 +40,18 @@ export default async function TagPostList({params}) {
             <p className='mt-10'>
                 Sorry, no posts has that tag.
             </p>
-            <Link href="/blog">Back to List</Link>
+            <BackToList />
         </div>
     )
   }
 
   return (
     <main className='px-6 mt-6 mx-auto max-w-2xl'>
-        <Button text="Home"/>
-        <h2 className='text-4xl font-bold dark:text-white/90'>Results for #{tag}</h2>
+        <BackToList />
+        <h2 className='text-4xl font-bold dark:text-white/90'>Posts with tag #{tag}</h2>
         <ul className='w-full list-none p-0'>
-            {tagPosts.map(post => (
-                <PostListItem key={post.slug} post={post} />
+            {tagPosts.map(meta => (
+                <PostListItem key={meta.slug} meta={meta} />
             ))}
         </ul>
     </main>

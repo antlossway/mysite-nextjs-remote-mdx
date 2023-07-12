@@ -3,6 +3,7 @@ import {notFound} from "next/navigation"
 import formatDate from "@/lib/formatDate";
 import Link from "next/link";
 import "highlight.js/styles/github-dark.css"
+import BackToList from "@/components/BackToList";
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL) // 0: equivalent to "cache: no-cache", for development, and need to comment out generateStaticParams
 
@@ -25,11 +26,13 @@ export async function generateMetadata ({params}) {
         }
     }
 
+    // console.log("debug generateMetadata: ", post.meta.title, post.meta.description)
+
     return {
         title: post.meta.title,
-        date: post.meta.date,
+        // date: post.meta.date,
         description: post.meta.description,
-        tags: post.meta.tags,
+        keywords: post.meta.tags,
     }
 }
 
@@ -50,8 +53,13 @@ export default async function Post ({params}) {
 
     return (
         <>
-        <main className="px-6 py-6 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline ">
-            <p className="mt-6 text-sm">{pubDate}</p>
+        <main className="px-6 py-6 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline
+        ">
+            <div className="flex justify-between items-center mb-6">
+                <BackToList />
+                <span className="text-right text-sm">{pubDate}</span>
+            </div>
+
             <article>
                 {content}
             </article>

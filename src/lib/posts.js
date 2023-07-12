@@ -59,6 +59,8 @@ export async function getPostByName(fileName) {
 
     const slug = fileName.replace(/\.mdx$/, '')
 
+    // console.log("debug frontmatter: ", frontmatter)
+
     const blogPostObj = {
         meta: {
             slug,
@@ -69,6 +71,8 @@ export async function getPostByName(fileName) {
         },
         content
     }
+
+    // console.log("debug meta: ", blogPostObj.meta)
 
     return blogPostObj
 

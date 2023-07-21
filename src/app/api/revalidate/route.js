@@ -1,4 +1,5 @@
 //on-demand revalided path
+import * as crypto from "crypto";
 
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
@@ -26,9 +27,24 @@ export async function GET(req) {
 }
 
 // for github webhook
+const verify_signature = (req) => {
+  const signature = crypto
+    .createHmac("sha256", process.env.MY_SECRET_TOKEN)
+    .update(JSON.stringify(req.body))
+    .digest("hex");
+  return `sha256=${signature}` === req.headers.get("x-hub-signature-256");
+};
+
 export async function POST(req) {
+  if (!verify_signature(req)) {
+    return NextResponse.json({
+      revalidated: false,
+      error: "Unauthorized",
+    });
+  }
+
   const data = await req.json(); // {path: '/blog'}
-  console.log(req.headers);
+  console.log("debug: secret match, will revaldate");
   const path = data.path || "/blog";
 
   revalidatePath(path);

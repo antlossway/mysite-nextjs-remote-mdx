@@ -28,7 +28,7 @@ export async function GET(req) {
 // for github webhook
 export async function POST(req) {
   const data = await req.json(); // {path: '/blog'}
-  console.log(data);
+  console.log(req.headers);
   const path = data.path || "/blog";
 
   revalidatePath(path);

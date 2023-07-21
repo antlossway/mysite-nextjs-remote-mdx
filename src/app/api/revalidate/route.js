@@ -32,7 +32,11 @@ const verify_signature = (req) => {
     .createHmac("sha256", process.env.MY_SECRET_TOKEN)
     .update(JSON.stringify(req.body))
     .digest("hex");
-  return `sha256=${signature}` === req.headers.get("x-hub-signature-256");
+  const calculatedSig = `sha256=${signature}`;
+  const receivedSig = req.headers.get("x-hub-signature-256");
+  console.log(`debug calculated ${calculatedSig}, received ${receivedSig}`);
+
+  return calculatedSig === receivedSig;
 };
 
 export async function POST(req) {
@@ -44,7 +48,7 @@ export async function POST(req) {
   }
 
   const data = await req.json(); // {path: '/blog'}
-  console.log("debug: secret match, will revaldate");
+  console.log("debug: secret match, will revalidate");
   const path = data.path || "/blog";
 
   revalidatePath(path);

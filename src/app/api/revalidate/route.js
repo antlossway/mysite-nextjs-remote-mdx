@@ -28,7 +28,7 @@ export async function GET(req) {
 
 // for github webhook
 const verify_signature = (req) => {
-  const mySecret = process.env.MY_SECRET_TOKEN;
+  const mySecret = process.env.GITHUB_WEBHOOK_SECRET;
 
   const signature = crypto
     .createHmac("sha256", mySecret)

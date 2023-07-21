@@ -28,13 +28,17 @@ export async function GET(req) {
 
 // for github webhook
 const verify_signature = (req) => {
+  const mySecret = process.env.MY_SECRET_TOKEN;
+
   const signature = crypto
-    .createHmac("sha256", process.env.MY_SECRET_TOKEN)
+    .createHmac("sha256", mySecret)
     .update(JSON.stringify(req.body))
     .digest("hex");
   const calculatedSig = `sha256=${signature}`;
   const receivedSig = req.headers.get("x-hub-signature-256");
-  console.log(`debug calculated ${calculatedSig}, received ${receivedSig}`);
+  console.log(
+    `debug secrete ${mySecret}, calculated ${calculatedSig}, received ${receivedSig}`
+  );
 
   return calculatedSig === receivedSig;
 };
@@ -52,6 +56,7 @@ export async function POST(req) {
   const path = data.path || "/blog";
 
   revalidatePath(path);
+  revalidatePath("/blog/[slug]");
 
   return NextResponse.json({
     revalidated: true,

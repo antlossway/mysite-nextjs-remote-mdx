@@ -43,6 +43,17 @@ const verify_signature = (req) => {
   return calculatedSig === receivedSig;
 };
 
+const refetch = async () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      revalidatePath("/blog");
+      revalidatePath("/blog/[slug]");
+      revalidatePath("/bookmark");
+      resolve("revalidated");
+    }, 3 * 1000); // Github raw content cache max-age: 5min
+  });
+};
+
 export async function POST(req) {
   //seems github bug, verify_signature always fails
   //   if (!verify_signature(req)) {
@@ -52,15 +63,13 @@ export async function POST(req) {
   //     });
   //   }
 
-  const data = await req.json(); // {path: '/blog'}
-  //   console.log("debug: secret match, will revalidate");
-  const path = data.path || "/blog";
+  // const data = await req.json(); // {path: '/blog'}
+  // const path = data.path || "/blog";
 
-  revalidatePath(path);
-  revalidatePath("/blog/[slug]");
+  const refetchResult = await refetch();
+  console.log(new Date(), refetchResult);
 
   return NextResponse.json({
     revalidated: true,
-    path,
   });
 }

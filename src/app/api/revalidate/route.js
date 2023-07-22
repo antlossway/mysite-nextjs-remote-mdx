@@ -50,7 +50,7 @@ const refetch = async () => {
       revalidatePath("/blog/[slug]");
       revalidatePath("/bookmark");
       resolve("revalidated");
-    }, 3 * 1000); // Github raw content cache max-age: 5min
+    }, 3 * 60 * 1000); // Github raw content cache max-age: 5min
   });
 };
 

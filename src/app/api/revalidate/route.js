@@ -50,11 +50,12 @@ const refetch = async () => {
       revalidatePath("/blog/[slug]");
       revalidatePath("/bookmark");
       resolve("revalidated");
-    }, 3 * 60 * 1000); // Github raw content cache max-age: 5min
+      console.log("debug: revalidated");
+    }, 5 * 60 * 1000); // Github raw content cache max-age: 5min
   });
 };
 
-export async function POST(req) {
+export async function POST(req, res) {
   //seems github bug, verify_signature always fails
   //   if (!verify_signature(req)) {
   //     return NextResponse.json({
@@ -66,8 +67,9 @@ export async function POST(req) {
   // const data = await req.json(); // {path: '/blog'}
   // const path = data.path || "/blog";
 
-  const refetchResult = await refetch();
-  console.log(new Date(), refetchResult);
+  refetch(); // don't await, so github webhook will get response immediately
+  // const refetchResult = await refetch()
+  // console.log(new Date(), refetchResult);
 
   return NextResponse.json({
     revalidated: true,

@@ -11,8 +11,8 @@ export default function Home() {
       <main className="wrapper ">
         <Introduction width={80} height={80} />
 
-        <div className="prose mt-8">
-          <h2 className="text-base font-medium">About me</h2>
+        <div className="prose mt-8 dark:text-white/80">
+          <h2 className="text-base font-medium dark:text-white">About me</h2>
           <p>
             I have been working a long time in the backend role, mainly network
             and system administration. I have also built platforms with REST API
@@ -28,7 +28,9 @@ export default function Home() {
             me to continuously strive for improvement{" "}
           </p>
 
-          <h2 className="mt-12 text-base font-medium">Projects</h2>
+          <h2 className="mt-12 text-base font-medium dark:text-white">
+            Projects
+          </h2>
         </div>
 
         <div className="mt-6 mb-24 ">

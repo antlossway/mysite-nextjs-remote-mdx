@@ -19,7 +19,9 @@ export default function Introduction({ width = 64, height = 64 }) {
         <h1 className="text-lg ">
           Hi, I'm <span className="font-bold">Quinn</span>, a web developer
         </h1>
-        <p className="mt-2 text-gray-600">I love to build website. </p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
+          I love to build website.{" "}
+        </p>
       </div>
     </div>
   );

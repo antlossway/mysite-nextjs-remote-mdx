@@ -17,7 +17,7 @@ const DialogContactForm = () => {
   return (
     <>
       <span
-        className="text-slate-600 dark:text-white/80 underline cursor-pointer
+        className=" text-slate-600 dark:text-white/80 underline cursor-pointer
           "
         onClick={openModal}
       >

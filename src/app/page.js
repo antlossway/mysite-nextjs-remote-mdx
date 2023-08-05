@@ -7,7 +7,7 @@ import LinkToNewTab from "@/components/LinkToNewTab";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-screen flex flex-col">
+    <div className="min-h-screen w-screen flex flex-col mb-8">
       <GradientTopRadient />
 
       <main className="wrapper ">

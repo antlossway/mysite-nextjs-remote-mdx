@@ -31,7 +31,7 @@ export default async function Bookmark() {
   const { meta, content } = post;
 
   return (
-    <main className="mt-6 px-6 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert">
+    <main className="mt-6 mb-16 px-6 py-6 mx-auto prose prose-base md:prose-lg prose-slate dark:prose-invert">
       <article>{content}</article>
     </main>
   );

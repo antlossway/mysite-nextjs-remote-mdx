@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen w-screen flex flex-col mb-8">
       <GradientTopRadient />
 
-      <main className="wrapper ">
+      <main className="wrapper px-4 py-16 mb-14  ">
         <Introduction width={80} height={80} />
 
         <div className="prose mt-8 dark:text-white/80">

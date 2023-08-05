@@ -90,7 +90,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-4 border rounded-lg border-gray-300 shadow-md ">
+    <div className="max-w-md mx-auto px-4 pt-4 rounded-md shadow-md backdrop-blur-lg backdrop-brightness-150 ">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-stretch gap-4"

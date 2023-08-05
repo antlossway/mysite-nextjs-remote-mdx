@@ -4,8 +4,9 @@ import React from "react";
 export default function Introduction({ width = 64, height = 64 }) {
   return (
     <div
-      className="max-w-xl px-2 py-2 bg-transparent rounded-md shadow-md
-        flex flex-col sm:flex-row items-center gap-4 dark:bg-black"
+      className=" px-6 py-4
+        flex flex-col sm:flex-row items-center gap-4
+        "
     >
       <Image
         src="/img/avatar1.png"

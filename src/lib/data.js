@@ -7,7 +7,7 @@ export const projectsData = [
   {
     title: "Stephane's online CV",
     description:
-      "Minimumlist style online CV for Stephane - a veteran in the IT world. No flashy coloring or animation, just a simple and clean design. That's what he wants.",
+      "Minimalist style online CV for Stephane - a veteran in the IT world. No flashy coloring or animation, just a simple and clean design. That's what he wants.",
     tags: ["Next.js", "TailwindCSS"],
     imageUrl: stephaneSiteImg,
     siteUrl: "https://stephane-site.vercel.app/",

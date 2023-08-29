@@ -46,18 +46,17 @@ export default function Home() {
             <h2 className="mt-12 text-base font-medium dark:text-white">
               Toolbox
             </h2>
-
             <Skills />
           </section>
         </div>
 
-        <section className="">
-          <Projects />
+        <Projects />
 
+        <section className="">
           <h2 className="mt-12 mb-4 text-base font-medium dark:text-white">
             Connect
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col items-start gap-2  ">
             <LinkToNewTab text="@github" url="https://github.com/antlossway" />
             <DialogContactForm />
           </div>

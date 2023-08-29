@@ -53,7 +53,7 @@ const ProjectCard = ({ title, description, tags, imageUrl, siteUrl }) => {
         group-hover:-rotate-2
         group-hover:scale-105
 
-        group-even:right-[initial] group-even:-left-40
+        group-even:right-[initial] group-even:-left-48
                 group-even:group-hover:translate-x-2 group-even:group-hover:-translate-y-2
         group-even:group-hover:rotate-2
          w-[28.25rem] rounded-t-lg shadow-2xl"

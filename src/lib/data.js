@@ -80,7 +80,7 @@ export const skillsData = [
     skills: ["Linux", "Vim", "VS Code"],
   },
   {
-    title: "Telecom/Networking",
-    skills: ["SS7/SIGTRAN", "SMS", "VPN", "Cisco", "Juniper"],
+    title: "Telecom/Network",
+    skills: ["SS7/SIGTRAN", "SMS", "VPN", "Cisco/Juniper"],
   },
 ];

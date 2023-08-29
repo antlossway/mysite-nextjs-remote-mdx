@@ -13,20 +13,20 @@
 /* test */
 @layer components {
   .wrapper {
-    @apply max-w-screen-md mx-auto px-4 py-6;
+    @apply max-w-screen-md mx-auto;
   }
   .wrapper-post {
     @apply max-w-3xl mx-auto;
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));

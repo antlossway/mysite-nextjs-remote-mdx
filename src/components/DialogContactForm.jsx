@@ -24,7 +24,7 @@ const DialogContactForm = () => {
         quinn[at]unices.org
       </span>
       {/* popup for contact form */}
-      <dialog id="dialog-contactform" className="p-0 rounded-md">
+      <dialog id="dialog-contactform" className="p-0 rounded-md ">
         <div className="relative ">
           <ContactForm />
 

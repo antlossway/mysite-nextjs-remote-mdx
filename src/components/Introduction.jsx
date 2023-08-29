@@ -18,10 +18,10 @@ export default function Introduction({ width = 64, height = 64 }) {
       />
       <div className="text-gray-800 dark:text-white/80 text-center sm:text-left">
         <h1 className="text-lg ">
-          Hi, I'm <span className="font-bold">Quinn</span>, a web developer
+          Hi, I'm <span className="font-bold">Quinn</span>
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-400">
-          I love to build website.{" "}
+          a web and mobile developer{" "}
         </p>
       </div>
     </div>

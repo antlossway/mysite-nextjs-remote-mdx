@@ -3,8 +3,8 @@
 import { useGlobalContext } from "@/context/GlobalContext";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import SunIcon from "./SunIcon";
-import MoonIcon from "./MoonIcon";
+import SunIcon from "./(decoration)/SunIcon";
+import MoonIcon from "./(decoration)/MoonIcon";
 
 const items = [
   {
@@ -74,11 +74,15 @@ export default function Navbar() {
 
   const linkClass =
     "px-6 py-3 rounded-full cursor-pointer hover:text-black dark:hover:text-white/70";
+
   const linkActive = "bg-slate-200/70 dark:bg-slate-700/70";
 
   return (
-    <div className="fixed bottom-0 inset-x-0 mx-auto h-12 sm:h-16 mb-4 max-w-md px-2 ">
-      <nav className="h-full w-full mx-auto px-4 rounded-full border border-black/40 bg-white/30 backdrop-blur-sm dark:border-white dark:bg-black/50 dark:text-white flex items-center justify-between capitalize text-xs sm:text-sm">
+    <div className="fixed bottom-0 inset-x-0 mx-auto mb-4 max-w-md px-2 h-12 sm:h-16  ">
+      <nav
+        className="h-full w-full mx-auto px-4 rounded-full border border-black/40 bg-white/30 backdrop-blur-sm text-black/80
+      dark:border-white dark:bg-black/50 dark:text-white flex items-center justify-between capitalize text-xs sm:text-sm"
+      >
         {items.map((item) => (
           <Link
             href={item.url}

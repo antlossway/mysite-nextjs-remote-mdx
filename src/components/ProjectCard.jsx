@@ -12,7 +12,8 @@ const ProjectCard = ({ title, description, tags, imageUrl, siteUrl }) => {
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]); //starting size and opacity is 0.8
+
   return (
     <motion.div
       ref={ref}
@@ -23,15 +24,18 @@ const ProjectCard = ({ title, description, tags, imageUrl, siteUrl }) => {
       <Link href={siteUrl} target="_blank">
         <section
           className="relative overflow-hidden sm:pr-8  sm:h-[20rem] rounded-lg
-     bg-gray-100 border-black/5 hover:bg-gray-200 transition"
+     bg-gray-100 dark:bg-gray-500 hover:bg-gray-200
+     dark:hover:bg-gray-400 transition
+      border-black/5 text-gray-700 dark:text-black"
         >
+          {/* description part */}
           <div
             className="h-full pt-4 pb-6 px-5 sm:pl-10 sm:pr-2 sm:pt-10 max-w-[50%]
       flex flex-col
       group-even:ml-[12rem] group-even:sm:ml-[20rem] "
           >
-            <h3 className="text-xl font-semibold text-gray-700">{title}</h3>
-            <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
+            <h3 className="text-xl font-semibold ">{title}</h3>
+            <p className="mt-2 leading-relaxed ">{description}</p>
             <ul className="flex flex-wrap mt-auto gap-2">
               {tags.map((tag, index) => (
                 <li

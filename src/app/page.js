@@ -50,6 +50,7 @@ export default function Home() {
           </section>
         </div>
 
+        {/* use framer motion to animate project cards */}
         <Projects />
 
         <section className="">

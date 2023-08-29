@@ -69,7 +69,7 @@ export const skillsData = [
   },
   {
     title: "Database/Headless CMS",
-    skills: ["PostgreSQL", "MySQL", "MangoDB", "Strapi", "WordPress"],
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Strapi", "WordPress"],
   },
   {
     title: "AWS Services",

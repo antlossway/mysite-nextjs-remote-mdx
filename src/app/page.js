@@ -1,18 +1,16 @@
-import Image from "next/image";
 import Introduction from "@/components/Introduction";
-import ContactForm from "@/components/ContactForm";
 import GradientTopRadient from "@/components/(decoration)/GradientTopRadient";
 import DialogContactForm from "@/components/DialogContactForm";
 import LinkToNewTab from "@/components/LinkToNewTab";
-import SectionHeading from "@/components/SectionHeading";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-screen flex flex-col mb-8">
       <GradientTopRadient />
 
-      <main className="wrapper px-4 py-16 mb-14  ">
+      <main className="wrapper px-4 pt-4 pb-16 mb-14 ">
         <Introduction width={80} height={80} />
 
         <div className="prose mt-8 dark:text-white/80">
@@ -34,7 +32,8 @@ export default function Home() {
             <p>
               In 2023, I decided to start an exciting journey towards frontend
               because I've always been fascinated by the visual and user-facing
-              aspects of web/mobile development.
+              aspects of web/mobile development. Thanks to my backend
+              experience, it makes the new journey a lot easier.
             </p>
             <p>
               Turning a design file into a fully functional and responsive
@@ -47,74 +46,8 @@ export default function Home() {
             <h2 className="mt-12 text-base font-medium dark:text-white">
               Toolbox
             </h2>
-            <div className="flex flex-wrap gap-x-10">
-              <div>
-                <h3 className="text-sm font-medium dark:text-white">
-                  Frameworks
-                </h3>
-                <ul className="list-disc text-sm ">
-                  <li>React</li>
-                  <li>React Native</li>
-                  <li>Next.js</li>
-                  <li>TailwindCSS</li>
-                  <li>Framer Motion</li>
-                </ul>
-              </div>
 
-              <div>
-                <h3 className="text-sm font-medium dark:text-white">
-                  Languages
-                </h3>
-                <ul className="list-disc text-sm ">
-                  <li>JavaScript</li>
-                  <li>TypeScript</li>
-                  <li>Python</li>
-                  <li>Bash Script</li>
-                  <li>HTML/CSS</li>
-                  <li>Markdown</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium dark:text-white">
-                  Database/Headless CMS
-                </h3>
-                <ul className="list-disc text-sm ">
-                  <li>PostgreSQL</li>
-                  <li>MySQL</li>
-                  <li>MangoDB</li>
-                  <li>Strapi</li>
-                  <li>WordPress</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium dark:text-white">
-                  AWS Services
-                </h3>
-                <ul className="list-disc text-sm ">
-                  <li>AWS Amplify</li>
-                  <li>EC2/S3/RDS</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium dark:text-white">OS/IDE</h3>
-                <ul className="list-disc text-sm ">
-                  <li>Linux</li>
-                  <li>Vim</li>
-                  <li>VS Code</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium dark:text-white">Telecom</h3>
-                <ul className="list-disc text-sm ">
-                  <li>SS7/SIGTRAN</li>
-                  <li>SMS</li>
-                </ul>
-              </div>
-            </div>
+            <Skills />
           </section>
         </div>
 

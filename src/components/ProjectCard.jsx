@@ -30,7 +30,7 @@ const ProjectCard = ({ title, description, tags, imageUrl, siteUrl }) => {
       flex flex-col
       group-even:ml-[12rem] group-even:sm:ml-[20rem] "
           >
-            <h3 className="text-xl font-semibold">{title}</h3>
+            <h3 className="text-xl font-semibold text-gray-700">{title}</h3>
             <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
             <ul className="flex flex-wrap mt-auto gap-2">
               {tags.map((tag, index) => (

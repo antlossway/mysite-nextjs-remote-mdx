@@ -44,3 +44,43 @@ export const projectsData = [
     siteUrl: "https://food-order-app-nine-mu.vercel.app/",
   },
 ];
+
+export const skillsData = [
+  {
+    title: "Frameworks",
+    skills: [
+      "React",
+      "React Native",
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Languages",
+    skills: [
+      "Javascript",
+      "Typescript",
+      "Python",
+      "Bash Script",
+      "HTML/CSS",
+      "Markdown",
+    ],
+  },
+  {
+    title: "Database/Headless CMS",
+    skills: ["PostgreSQL", "MySQL", "MangoDB", "Strapi", "WordPress"],
+  },
+  {
+    title: "AWS Services",
+    skills: ["AWS Amplify", "EC2/S3/RDS"],
+  },
+  {
+    title: "OS/IDE",
+    skills: ["Linux", "Vim", "VS Code"],
+  },
+  {
+    title: "Telecom/Networking",
+    skills: ["SS7/SIGTRAN", "SMS", "VPN", "Cisco", "Juniper"],
+  },
+];

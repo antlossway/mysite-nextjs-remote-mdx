@@ -36,9 +36,9 @@ export default function Home() {
               experience, it makes the new journey a lot easier.
             </p>
             <p>
-              Turning a design file into a fully functional and responsive
-              website is truly fulfiling, and it motivates me to continuously
-              strive for improvement.{" "}
+              I take great pleasure in crafting UIs with React, embracing new
+              features offered by Next.js and TailwindCSS to develop visually
+              pleasant screens and enhance user experiences.{" "}
             </p>
           </section>
 

@@ -1,0 +1,18 @@
+.example {
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #ed5ab3;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+}
+
+.example > div {
+  color: white;
+  overflow: hidden;
+}
+
+.example:hover {
+  grid-template-rows: 1fr;
+}

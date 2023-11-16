@@ -42,6 +42,8 @@ export default function Home() {
             </p>
           </section>
 
+          {/* Turning a design file into a fully functional and responsive website is truly fulfiling, and it motivates me to continuously strive for improvement. */}
+
           <section>
             <h2 className="mt-12 text-base font-medium dark:text-white">
               Toolbox

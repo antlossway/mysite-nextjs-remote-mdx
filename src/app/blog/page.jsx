@@ -9,6 +9,7 @@ export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL);
 
 export default async function Blog({ searchParams }) {
   const postsMeta = await getPostsMeta();
+  console.log("debug postsMeta: ", postsMeta);
 
   if (!postsMeta) {
     return <p className="mt-10 text-center">Sorry, no posts available</p>;

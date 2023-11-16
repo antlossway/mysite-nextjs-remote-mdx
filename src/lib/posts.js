@@ -1,11 +1,12 @@
-import { compileMDX } from "next-mdx-remote/rsc"; //support for react server component
-import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
-import rehypeHighlight from "rehype-highlight/lib";
-import rehypeSlug from "rehype-slug";
-import Video from "@/components/Video";
-import Button from "@/components/Button";
-import LinkToNewTab from "@/components/LinkToNewTab";
-import { s } from "hastscript";
+import { compileMDX } from "next-mdx-remote/rsc" //support for react server component
+import rehypeAutolinkHeadings from "rehype-autolink-headings/lib"
+import rehypeHighlight from "rehype-highlight/lib"
+import rehypeSlug from "rehype-slug"
+import Video from "@/components/Video"
+import Button from "@/components/Button"
+import LinkToNewTab from "@/components/LinkToNewTab"
+import HeightTransition from "@/components/(demo)/HeightTransition"
+import { s } from "hastscript"
 
 export async function getPostByName(fileName) {
   const res = await fetch(
@@ -17,13 +18,13 @@ export async function getPostByName(fileName) {
         "X-GitHub-Api-Version": "2022-11-28",
       },
     }
-  );
+  )
 
-  if (!res.ok) return undefined;
+  if (!res.ok) return undefined
 
-  const rawMDX = await res.text(); // note that it's not json(), it's text()
+  const rawMDX = await res.text() // note that it's not json(), it's text()
   //   console.log("debug rawMDX: ", rawMDX.substring(1, 100));
-  if (rawMDX === "404: Not Found") return undefined;
+  if (rawMDX === "404: Not Found") return undefined
 
   const { frontmatter, content } = await compileMDX({
     source: rawMDX,
@@ -31,6 +32,7 @@ export async function getPostByName(fileName) {
       Video,
       Button,
       LinkToNewTab,
+      HeightTransition,
     },
     options: {
       parseFrontmatter: true,
@@ -62,9 +64,9 @@ export async function getPostByName(fileName) {
         ],
       },
     },
-  });
+  })
 
-  const slug = fileName.replace(/\.mdx$/, "");
+  const slug = fileName.replace(/\.mdx$/, "")
 
   // console.log("debug frontmatter: ", frontmatter)
 
@@ -77,11 +79,11 @@ export async function getPostByName(fileName) {
       tags: frontmatter.tags,
     },
     content,
-  };
+  }
 
   //   console.log("debug meta: ", blogPostObj.meta);
 
-  return blogPostObj;
+  return blogPostObj
 }
 
 export async function getPostsMeta() {
@@ -94,25 +96,25 @@ export async function getPostsMeta() {
         "X-GitHub-Api-Version": "2022-11-28",
       },
     }
-  );
+  )
 
-  if (!res.ok) return undefined;
+  if (!res.ok) return undefined
 
-  const repoFiletree = await res.json();
+  const repoFiletree = await res.json()
   const filesArray = repoFiletree.tree
     .map((obj) => obj.path)
     .filter((path) => path.endsWith(".mdx"))
-    .filter((path) => path !== "bookmark.mdx");
+    .filter((path) => path !== "bookmark.mdx")
 
-  const posts = [];
+  const posts = []
 
   for (const file of filesArray) {
-    const post = await getPostByName(file);
+    const post = await getPostByName(file)
     if (post) {
-      const { meta } = post;
-      posts.push(meta);
+      const { meta } = post
+      posts.push(meta)
     }
   }
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
 }

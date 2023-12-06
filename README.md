@@ -44,3 +44,24 @@ This seems to be designed like that in order to be more specific in dark mode.
      bg-gray-100 dark:bg-gray-500 hover:bg-gray-200
      dark:hover:bg-gray-400 transition
 ```
+
+## meta data
+
+use [https://www.heymeta.com/](https://www.heymeta.com/) to check site's meta settings
+
+to add a image, simply put a image named "opengraph-image.png" in the root layout level. Next.js will generate below meta tags in `<head>`
+
+```
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://quinn.unices.org">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quinn's place">
+<meta property="og:description" content="The place to show what I have learned. Create with next.js, tailwindCSS">
+<meta property="og:image" content="link to the image">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quinn's place">
+<meta name="twitter:description" content="The place to show what I have learned. Create with next.js, tailwindCSS">
+<meta name="twitter:image" content="link to the iamge">
+```

@@ -1,7 +1,8 @@
-import janieSiteImg from "/public/img/janie-website-sc.png";
-import stephaneSiteImg from "/public/img/stephane-cv-sc.png";
-import spacetourismImg from "/public/img/space-tourism-sc.png";
-import foodorderImg from "/public/img/food-order-sc.png";
+import janieSiteImg from "/public/img/janie-website-sc.png"
+import stephaneSiteImg from "/public/img/stephane-cv-sc.png"
+import spacetourismImg from "/public/img/space-tourism-sc.png"
+import foodorderImg from "/public/img/food-order-sc.png"
+import codeOverflowImg from "/public/img/code-overflow-sc.png"
 
 export const projectsData = [
   {
@@ -28,22 +29,31 @@ export const projectsData = [
     imageUrl: spacetourismImg,
     siteUrl: "https://frontend-mentor-space-tourism-beryl.vercel.app/",
   },
+  // {
+  //   title: "Food order app",
+  //   description:
+  //     "This is a fullstack practice project. There is a lot of tools and technologies that I learned to use to build this app. Not finished, to be continued...",
+  //   tags: [
+  //     "Next.js",
+  //     "TailwindCSS",
+  //     "Typescript",
+  //     "postgreSQL",
+  //     "Stripe",
+  //     "Prisma",
+  //   ],
+  //   imageUrl: foodorderImg,
+  //   siteUrl: "https://food-order-app-nine-mu.vercel.app/",
+  // },
+
   {
-    title: "Food order app",
+    title: "StackOverflow clone app",
     description:
-      "This is a fullstack practice project. There is a lot of tools and technologies that I learned to use to build this app. Not finished, to be continued...",
-    tags: [
-      "Next.js",
-      "TailwindCSS",
-      "Typescript",
-      "postgreSQL",
-      "Stripe",
-      "Prisma",
-    ],
-    imageUrl: foodorderImg,
-    siteUrl: "https://food-order-app-nine-mu.vercel.app/",
+      "This is a fullstack practice project. There is a lot of tools and technologies that I learned to use to build this app.",
+    tags: ["Next.js", "TailwindCSS", "Typescript", "Clerk", "MongoDB"],
+    imageUrl: codeOverflowImg,
+    siteUrl: "https://code-overflow-antlossway.vercel.app/",
   },
-];
+]
 
 export const skillsData = [
   {
@@ -83,4 +93,4 @@ export const skillsData = [
     title: "Telecom/Network",
     skills: ["SS7/SIGTRAN", "SMS", "VPN", "Cisco/Juniper"],
   },
-];
+]

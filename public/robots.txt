@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://mysite-nextjs-remote-mdx.vercel.app
+Host: https://quinn.unices.org
 
 # Sitemaps
-Sitemap: https://mysite-nextjs-remote-mdx.vercel.app/sitemap.xml
+Sitemap: https://quinn.unices.org/sitemap.xml

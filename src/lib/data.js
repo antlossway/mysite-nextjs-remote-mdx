@@ -3,8 +3,17 @@ import stephaneSiteImg from "/public/img/stephane-cv-sc.png"
 import spacetourismImg from "/public/img/space-tourism-sc.png"
 import foodorderImg from "/public/img/food-order-sc.png"
 import codeOverflowImg from "/public/img/code-overflow-sc.png"
+import helloImg from "/public/img/hello-vpn.png"
 
 export const projectsData = [
+  {
+    title: "Hello-VPN",
+    description:
+      "A landing page and blog system for a new VPN service of AMEEX|mobile. It's built with Next.js and TailwindCSS. The backend is powered by Headless Wordpress.",
+    tags: ["Next.js", "TailwindCSS", "Wordpress"],
+    imageUrl: helloImg,
+    siteUrl: "https://hello-vpn.com",
+  },
   {
     title: "Stephane's online CV",
     description:

@@ -12,7 +12,8 @@ export const metadata = {
   description:
     "The place to show what I have learned. Create with next.js, tailwindCSS",
   other: {
-    googleSiteVerification: "VMK9Qr97Z_Fma3Dh3WiKzpvxOrVzzKR8ernpm4lDMDs",
+    // googleSiteVerification: "VMK9Qr97Z_Fma3Dh3WiKzpvxOrVzzKR8ernpm4lDMDs",
+    "google-site-verification": "VMK9Qr97Z_Fma3Dh3WiKzpvxOrVzzKR8ernpm4lDMDs",
   },
 }
 

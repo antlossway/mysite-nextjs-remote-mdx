@@ -1,24 +1,24 @@
-import React from "react";
-import { getPostsMeta } from "@/lib/posts";
-import PostListItem from "@/components/PostListItem";
-import paginate from "@/lib/paginate";
-import Pagination from "@/components/Pagination";
-import GradientBlog from "@/components/(decoration)/GradientBlog";
+import React from "react"
+import { getPostsMeta } from "@/lib/posts"
+import PostListItem from "@/components/PostListItem"
+import paginate from "@/lib/paginate"
+import Pagination from "@/components/Pagination"
+import GradientBlog from "@/components/(decoration)/GradientBlog"
 
-export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL);
+export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL)
 
 export default async function Blog({ searchParams }) {
-  const postsMeta = await getPostsMeta();
-  console.log("debug postsMeta: ", postsMeta);
+  const postsMeta = await getPostsMeta()
+  // console.log("debug postsMeta: ", postsMeta);
 
   if (!postsMeta) {
-    return <p className="mt-10 text-center">Sorry, no posts available</p>;
+    return <p className="mt-10 text-center">Sorry, no posts available</p>
   }
 
-  let currentPage = parseInt(searchParams.page) || 1; // /blog?page=1
-  const pageSize = parseInt(process.env.POST_PER_PAGE) || 10; // posts per page
+  let currentPage = parseInt(searchParams.page) || 1 // /blog?page=1
+  const pageSize = parseInt(process.env.POST_PER_PAGE) || 10 // posts per page
 
-  const paginatedPosts = paginate(postsMeta, currentPage, pageSize);
+  const paginatedPosts = paginate(postsMeta, currentPage, pageSize)
 
   return (
     <>
@@ -47,5 +47,5 @@ export default async function Blog({ searchParams }) {
         </div>
       </div>
     </>
-  );
+  )
 }

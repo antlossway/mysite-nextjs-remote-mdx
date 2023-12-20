@@ -1,6 +1,6 @@
 import { compileMDX } from "next-mdx-remote/rsc" //support for react server component
-import rehypeAutolinkHeadings from "rehype-autolink-headings/lib"
-import rehypeHighlight from "rehype-highlight/lib"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeHighlight from "rehype-highlight"
 import rehypeSlug from "rehype-slug"
 import Video from "@/components/Video"
 import Button from "@/components/Button"

@@ -33,8 +33,10 @@ export default function RootLayout({ children }) {
       </body>
       <Script
         async
-        src="https://umami-analytics-tawny.vercel.app/script.js"
-        data-website-id="a7254dc3-4589-4c30-a294-9b5d0341de72"
+        // src="https://umami-analytics-tawny.vercel.app/script.js"
+        // data-website-id="a7254dc3-4589-4c30-a294-9b5d0341de72"
+        src="https://stats.hello-vpn.com/script.js"
+        data-website-id="0cb66f7d-1b75-4799-aa49-cd68c416c842"
       />
     </html>
   )

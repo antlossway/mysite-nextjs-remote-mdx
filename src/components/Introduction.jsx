@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import Image from "next/image"
+import React from "react"
 
 export default function Introduction({ width = 64, height = 64 }) {
   return (
@@ -25,5 +25,5 @@ export default function Introduction({ width = 64, height = 64 }) {
         </p>
       </div>
     </div>
-  );
+  )
 }

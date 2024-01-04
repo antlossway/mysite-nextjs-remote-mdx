@@ -6,6 +6,8 @@ import Video from "@/components/Video"
 import Button from "@/components/Button"
 import LinkToNewTab from "@/components/LinkToNewTab"
 import HeightTransition from "@/components/(demo)/HeightTransition"
+import Iframe from "@/components/Iframe"
+
 import { s } from "hastscript"
 
 export async function getPostByName(fileName) {
@@ -33,6 +35,7 @@ export async function getPostByName(fileName) {
       Button,
       LinkToNewTab,
       HeightTransition,
+      Iframe,
     },
     options: {
       parseFrontmatter: true,

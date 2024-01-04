@@ -4,6 +4,7 @@ import PostListItem from "@/components/PostListItem"
 import paginate from "@/lib/paginate"
 import Pagination from "@/components/Pagination"
 import GradientBlog from "@/components/(decoration)/GradientBlog"
+import Iframe from "@/components/Iframe"
 
 export const revalidate = parseInt(process.env.REVALIDATE_INTERVAL)
 

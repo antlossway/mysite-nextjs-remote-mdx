@@ -1,16 +1,16 @@
-import Introduction from "@/components/Introduction";
-import GradientTopRadient from "@/components/(decoration)/GradientTopRadient";
-import DialogContactForm from "@/components/DialogContactForm";
-import LinkToNewTab from "@/components/LinkToNewTab";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
+import Introduction from "@/components/Introduction"
+import GradientTopRadient from "@/components/(decoration)/GradientTopRadient"
+import DialogContactForm from "@/components/DialogContactForm"
+import LinkToNewTab from "@/components/LinkToNewTab"
+import Projects from "@/components/Projects"
+import Skills from "@/components/Skills"
 
 export default function Home() {
   return (
     <div className="min-h-screen w-screen flex flex-col mb-8">
       <GradientTopRadient />
 
-      <main className="wrapper px-4 pt-4 pb-16 mb-14 ">
+      <main className="wrapper px-6 pt-4 pb-16 mb-14">
         <Introduction width={80} height={80} />
 
         <div className="prose mt-8 dark:text-white/80">
@@ -66,5 +66,5 @@ export default function Home() {
         </section>
       </main>
     </div>
-  );
+  )
 }

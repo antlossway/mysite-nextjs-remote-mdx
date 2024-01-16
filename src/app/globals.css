@@ -11,12 +11,15 @@
 }
 
 /* test */
-@layer components {
+@layer utilities {
   .wrapper {
     @apply max-w-screen-md mx-auto;
   }
   .wrapper-post {
     @apply max-w-3xl mx-auto;
+  }
+  .debug {
+    @apply border border-red-500;
   }
 }
 

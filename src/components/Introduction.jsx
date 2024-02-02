@@ -21,7 +21,7 @@ export default function Introduction({ width = 64, height = 64 }) {
           Hi, I'm <span className="font-bold">Quinn</span>
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-400">
-          enjoy web and mobile development{" "}
+          Network Specialist, SMS expert, Web Developer{" "}
         </p>
       </div>
     </div>

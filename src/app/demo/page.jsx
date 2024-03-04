@@ -1,13 +1,15 @@
 import HeightTransition from "@/components/(demo)/HeightTransition"
+import NewsLetter from "@/components/NewsLetter"
 import React from "react"
 
 const page = () => {
   return (
     <div>
       <h1>Demo component</h1>
-      <HeightTransition>
+      {/* <HeightTransition>
         tailwindcss - transition height auto using max-height
-      </HeightTransition>
+      </HeightTransition> */}
+      <NewsLetter />
     </div>
   )
 }

@@ -65,3 +65,18 @@ to add a image, simply put a image named "opengraph-image.png" in the root layou
 <meta name="twitter:description" content="The place to show what I have learned. Create with next.js, tailwindCSS">
 <meta name="twitter:image" content="link to the iamge">
 ```
+
+## email function
+
+### option 1
+
+use Node mailer to send email, using mailtrap as SMTP server
+
+### option 2 (currently in use)
+
+use resend.com to send email (it's a complete email platform).
+optionally use react.email to build email template.
+
+### option 3
+
+use some SaaS platform like mailerlite or loops. They provide embedded form and many other features.
